@@ -1,0 +1,35 @@
+.categories {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.content-category {
+    margin-left: 36px;
+}
+
+.categorys-button {
+    border: none;
+    background-color: white;
+}
+
+.input-categories {
+    margin-bottom: 30px;
+    background-color: rgb(19,137,15);
+    padding: 20px;
+}
+
+.categorys-button:hover {
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: rgb(23, 145, 64);
+}
+
+.detalhe {
+    width: 250px;
+    height: 2px;
+    margin-bottom: 25px;
+    background-color: rgba(176, 179, 187, 1);
+}
+

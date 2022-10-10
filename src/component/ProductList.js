@@ -22,6 +22,7 @@ function ProductList({ products }) {
         data-testid="product"
         key={ prod.id }
       >
+        <img src={ prod.thumbnail } alt={ prod.title } />
         <button
           type="button"
           data-testid="product-detail-link"
