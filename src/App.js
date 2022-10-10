@@ -5,8 +5,6 @@ import Checkout from './pages/Checkout';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
 
-import './App.css';
-
 function App() {
   if (!window.localStorage.getItem('cart')) {
     window.localStorage.setItem('cart', JSON.stringify([]));
