@@ -50,9 +50,9 @@
   transform: translateY(-2.5px);
 }
 
-#button-add:active{
-    background-color: rgb(133, 37, 201);
-    color: white;
-    border: none;
-    filter: drop-shadow(3px 3px 3px rgba(132, 123, 99, 0.576));
+#button-add:active {
+  background-color: rgb(133, 37, 201);
+  color: white;
+  border: none;
+  filter: drop-shadow(3px 3px 3px rgba(132, 123, 99, 0.576));
 }

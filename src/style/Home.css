@@ -21,6 +21,8 @@
 .categorys-button {
   border: none;
   background-color: white;
+  font-size: 15px;
+  word-spacing: 1px;
 }
 
 .input-categories {
@@ -36,6 +38,8 @@
 .categorys-button:hover {
   -webkit-text-stroke-width: 0.8px;
   -webkit-text-stroke-color: rgb(23, 145, 64);
+  transition: 300ms;
+  transform: translateY(-2px);
 }
 
 .detalhe {
