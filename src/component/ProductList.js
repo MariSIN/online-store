@@ -37,6 +37,7 @@ function ProductList({ products }) {
           </button>
           <button
             type="button"
+            id="button-add"
             data-testid="product-add-to-cart"
             onClick={ () => addToCart(prod) }
           >

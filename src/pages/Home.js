@@ -46,7 +46,7 @@ export default function Home() {
             Busca
           </button>
         </div>
-        <Link data-testid="shopping-cart-button" to="/ cart" id="cart">
+        <Link data-testid="shopping-cart-button" to="/cart" id="cart">
           <RiShoppingCartLine />
         </Link>
       </div>

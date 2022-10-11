@@ -40,6 +40,7 @@ export default function Cart() {
           >
             Remove
           </button>
+          {console.log(product)}
           <p data-testid="shopping-cart-product-name">{ product.title }</p>
           <button
             type="button"
