@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import '../style/Home.css';
+import '../style/ProductList.css';
 import { Link } from 'react-router-dom';
+import { RiShoppingCartLine } from 'react-icons/ri';
 import ProductList from '../component/ProductList';
 
 import {
@@ -33,39 +34,44 @@ export default function Home() {
   return (
     <>
       <div className="input-categories">
-        <input
-          className="input-search"
-          data-testid="query-input"
-          value={ query }
-          onChange={ (e) => setQuery(e.target.value) }
-        />
-        <button type="button" data-testid="query-button" onClick={ onSearch }>
-          Busca
-        </button>
+        <div className="search">
+          <input
+            className="input-search"
+            data-testid="query-input"
+            value={ query }
+            placeholder="Digite o que você busca"
+            onChange={ (e) => setQuery(e.target.value) }
+          />
+          <button type="button" data-testid="query-button" onClick={ onSearch }>
+            Busca
+          </button>
+        </div>
+        <Link data-testid="shopping-cart-button" to="/ cart" id="cart">
+          <RiShoppingCartLine />
+        </Link>
       </div>
       <div className="content-category">
-        <h2>Categorias</h2>
-        <div className="detalhe"> </div>
-        <div className="categories">
-          {categories.length > 0
-          && categories.map((cat) => (
-            <button
-              className="categorys-button"
-              type="button"
-              key={ cat.id }
-              data-testid="category"
-              onClick={ () => onCategoryFilter(cat.id) }
-            >
-              {cat.name}
-            </button>
-          ))}
+        <div id="all-classes">
+          <h2>Categorias</h2>
+          <div className="detalhe"> </div>
+          <div className="categories">
+            {categories.length > 0
+            && categories.map((cat) => (
+              <button
+                className="categorys-button"
+                type="button"
+                key={ cat.id }
+                data-testid="category"
+                onClick={ () => onCategoryFilter(cat.id) }
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
         </div>
 
+        <ProductList products={ products } />
       </div>
-      <Link data-testid="shopping-cart-button" to="/cart">
-        Carrinho
-      </Link>
-      <ProductList products={ products } />
     </>
   );
 }

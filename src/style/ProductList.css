@@ -1,0 +1,22 @@
+#initial-message {
+    display: none;
+}
+
+.button-products {
+    display: flex;
+    border: none;
+    background-color: white;
+}
+
+.product-content {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    justify-content: space-between;
+}
+
+#all-products {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px; 
+}

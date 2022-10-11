@@ -1,35 +1,51 @@
 .categories {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    gap: 8px;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+#all-classes {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
 }
 
 .content-category {
-    margin-left: 36px;
+  display: flex;
+  margin-left: 36px;
+  justify-content: flex-start;
 }
 
 .categorys-button {
-    border: none;
-    background-color: white;
+  border: none;
+  background-color: white;
 }
 
 .input-categories {
-    margin-bottom: 30px;
-    background-color: rgb(19,137,15);
-    padding: 20px;
+  display: flex;
+  margin-bottom: 30px;
+  background-color: rgb(19, 137, 15);
+  padding: 20px;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .categorys-button:hover {
-    -webkit-text-stroke-width: 0.8px;
-    -webkit-text-stroke-color: rgb(23, 145, 64);
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: rgb(23, 145, 64);
 }
 
 .detalhe {
-    width: 250px;
-    height: 2px;
-    margin-bottom: 25px;
-    background-color: rgba(176, 179, 187, 1);
+  width: 250px;
+  height: 1.5px;
+  margin-bottom: 25px;
+  background-color: rgba(176, 179, 187, 1);
 }
 
+#cart {
+  color: white;
+  font-size: 25px;
+}
