@@ -1,0 +1,13 @@
+#cart-content {
+  display: flex;
+}
+
+#button-remove {
+  background-color: transparent;
+  border: none;
+}
+
+#icon-delete {
+  font-size: 25px;
+  color: red;
+}

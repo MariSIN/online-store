@@ -40,6 +40,7 @@ export function addToCart(product) {
       { id: product.id,
         title: product.title,
         price: product.price,
+        thumbnail: product.thumbnail,
         quantity: 1,
         available_quantity: product.available_quantity,
       },

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { TiDelete } from 'react-icons/ti';
 import {
   getCartProducts, changeQuantityOfProduct, onRemoveProduct,
 } from '../services/api';
+import '../style/Cart.css';
 
 export default function Cart() {
   const [products, setProducts] = useState(getCartProducts());
@@ -32,16 +34,23 @@ export default function Cart() {
     <>
       <Link to="/">Back</Link>
       {products.map((product) => (
-        <div key={ product.id }>
+        <div id="cart-content" key={ product.id }>
           <button
+            id="button-remove"
             type="button"
             data-testid="remove-product"
             onClick={ () => onRemove(product.id) }
           >
-            Remove
+            <TiDelete id="icon-delete" />
           </button>
           {console.log(product)}
-          <p data-testid="shopping-cart-product-name">{ product.title }</p>
+          <img src={ product.thumbnail } alt={ product.title } />
+          <p
+            data-testid="shopping-cart-product-name"
+            id="description-product"
+          >
+            { product.title }
+          </p>
           <button
             type="button"
             data-testid="product-decrease-quantity"

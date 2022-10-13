@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../style/ProductList.css';
 import { Link } from 'react-router-dom';
 import { RiShoppingCartLine } from 'react-icons/ri';
+import { ImSearch } from 'react-icons/im';
 import ProductList from '../component/ProductList';
 
 import {
@@ -39,11 +40,16 @@ export default function Home() {
             className="input-search"
             data-testid="query-input"
             value={ query }
-            placeholder="Digite o que você busca"
+            placeholder="Digite o que você busca..."
             onChange={ (e) => setQuery(e.target.value) }
           />
-          <button type="button" data-testid="query-button" onClick={ onSearch }>
-            Busca
+          <button
+            type="button"
+            data-testid="query-button"
+            onClick={ onSearch }
+            id="search-button"
+          >
+            <ImSearch />
           </button>
         </div>
         <Link data-testid="shopping-cart-button" to="/cart" id="cart">
@@ -52,7 +58,7 @@ export default function Home() {
       </div>
       <div className="content-category">
         <div id="all-classes">
-          <h2>Categorias</h2>
+          <h2 id="title-categories">Categorias</h2>
           <div className="detalhe"> </div>
           <div className="categories">
             {categories.length > 0

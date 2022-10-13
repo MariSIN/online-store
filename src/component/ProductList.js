@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { HiOutlineEmojiSad } from 'react-icons/hi';
 import { addToCart } from '../services/api';
 import '../style/ProductList.css';
 import '../style/Home.css';
@@ -15,7 +16,21 @@ function ProductList({ products }) {
     );
   }
 
-  if (products.results.length === 0) return <h2>Nenhum produto foi encontrado</h2>;
+  if (products.results.length === 0) {
+    return (
+      <>
+        <div className="notFound">
+          <HiOutlineEmojiSad
+            id="sad"
+          />
+          <h2>
+            Nenhum produto foi encontrado
+          </h2>
+        </div>
+        <div id="empty-content"> </div>
+      </>
+    );
+  }
 
   return (
     <div id="all-products">
