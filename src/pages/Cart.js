@@ -33,44 +33,54 @@ export default function Cart() {
   return (
     <>
       <Link to="/">Back</Link>
-      {products.map((product) => (
-        <div id="cart-content" key={ product.id }>
-          <button
-            id="button-remove"
-            type="button"
-            data-testid="remove-product"
-            onClick={ () => onRemove(product.id) }
-          >
-            <TiDelete id="icon-delete" />
-          </button>
-          {console.log(product)}
-          <img src={ product.thumbnail } alt={ product.title } />
-          <p
-            data-testid="shopping-cart-product-name"
-            id="description-product"
-          >
-            { product.title }
-          </p>
-          <button
-            type="button"
-            data-testid="product-decrease-quantity"
-            onClick={ () => onChangeQuantity(product.id, (qt) => qt - 1) }
-          >
-            -
-          </button>
-          <p data-testid="shopping-cart-product-price">
-            { (product.price * product.quantity).toFixed(2) }
-          </p>
-          <button
-            type="button"
-            data-testid="product-increase-quantity"
-            onClick={ () => onChangeQuantity(product.id, (qt) => qt + 1) }
-          >
-            +
-          </button>
-          <p data-testid="shopping-cart-product-quantity">{ product.quantity }</p>
-        </div>
-      ))}
+      <div id="all-cart-products">
+        <h2 id="title-cart">Revise seus Produtos</h2>
+        {products.map((product) => (
+          <div id="cart-content" key={ product.id }>
+            <div className="separator"> </div>
+            <button
+              id="button-remove"
+              type="button"
+              data-testid="remove-product"
+              onClick={ () => onRemove(product.id) }
+            >
+              <TiDelete id="icon-delete" />
+            </button>
+            <img src={ product.thumbnail } alt={ product.title } className="cart-img" />
+            <p
+              data-testid="shopping-cart-product-name"
+              id="description-product"
+            >
+              { product.title }
+            </p>
+            <button
+              type="button"
+              data-testid="product-decrease-quantity"
+              onClick={ () => onChangeQuantity(product.id, (qt) => qt - 1) }
+              className="sub-sum-buttom"
+            >
+              -
+            </button>
+            <div
+              data-testid="shopping-cart-product-quantity"
+              id="quantity"
+            >
+              { product.quantity }
+            </div>
+            <button
+              type="button"
+              data-testid="product-increase-quantity"
+              className="sub-sum-buttom"
+              onClick={ () => onChangeQuantity(product.id, (qt) => qt + 1) }
+            >
+              +
+            </button>
+            <p data-testid="shopping-cart-product-price">
+              { (product.price * product.quantity).toFixed(2) }
+            </p>
+          </div>
+        ))}
+      </div>
       <Link data-testid="checkout-products" to="/checkout">Terminar compra</Link>
     </>
   );

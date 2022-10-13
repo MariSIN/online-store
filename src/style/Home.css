@@ -7,11 +7,13 @@
 * {
   font-family: 'Montserrat';
 }
+
 #title-categories {
   color: rgb(81, 31, 115);
   font-weight: 900;
   letter-spacing: 1.5px;
 }
+
 .categories {
   display: flex;
   flex-direction: column;
