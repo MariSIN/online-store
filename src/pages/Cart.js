@@ -34,7 +34,7 @@ export default function Cart() {
     <>
       <Link to="/">Back</Link>
       <div id="all-cart-products">
-        <h2 id="title-cart">Revise seus Produtos</h2>
+        <h2 id="title-cart">Carrinho de Compras</h2>
         {products.map((product) => (
           <div id="cart-content" key={ product.id }>
             <div className="separator"> </div>
