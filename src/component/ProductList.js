@@ -10,7 +10,7 @@ function ProductList({ products }) {
 
   if (!products.searched) {
     return (
-      <p data-testid="home-initial-message" id="initial-message">
+      <p data-testid="home-initial-message" className="initial-message">
         Digite algum termo de pesquisa ou escolha uma categoria.
       </p>
     );
@@ -21,19 +21,19 @@ function ProductList({ products }) {
       <>
         <div className="notFound">
           <HiOutlineEmojiSad
-            id="sad"
+            className="sad"
           />
           <h2>
             Nenhum produto foi encontrado
           </h2>
         </div>
-        <div id="empty-content"> </div>
+        <div className="empty-content"> </div>
       </>
     );
   }
 
   return (
-    <div id="all-products">
+    <div className="all-products">
       { products.results.map((prod) => (
         <div
           type="button"
@@ -52,7 +52,7 @@ function ProductList({ products }) {
           </button>
           <button
             type="button"
-            id="button-add"
+            className="button-add"
             data-testid="product-add-to-cart"
             onClick={ () => addToCart(prod) }
           >

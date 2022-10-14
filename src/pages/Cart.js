@@ -33,23 +33,23 @@ export default function Cart() {
   return (
     <>
       <Link to="/">Back</Link>
-      <div id="all-cart-products">
-        <h2 id="title-cart">Carrinho de Compras</h2>
+      <div className="all-cart-products">
+        <h2 className="title-cart">Carrinho de Compras</h2>
         {products.map((product) => (
-          <div id="cart-content" key={ product.id }>
+          <div className="cart-content" key={ product.id }>
             <div className="separator"> </div>
             <button
-              id="button-remove"
+              className="button-remove"
               type="button"
               data-testid="remove-product"
               onClick={ () => onRemove(product.id) }
             >
-              <TiDelete id="icon-delete" />
+              <TiDelete className="icon-delete" />
             </button>
             <img src={ product.thumbnail } alt={ product.title } className="cart-img" />
             <p
               data-testid="shopping-cart-product-name"
-              id="description-product"
+              className="description-product"
             >
               { product.title }
             </p>
@@ -63,7 +63,7 @@ export default function Cart() {
             </button>
             <div
               data-testid="shopping-cart-product-quantity"
-              id="quantity"
+              className="quantity"
             >
               { product.quantity }
             </div>

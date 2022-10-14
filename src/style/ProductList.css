@@ -1,71 +1,71 @@
-#initial-message {
+.initial-message {
   display: none;
 }
 
 .button-products {
-  display: flex;
-  border: none;
   background-color: transparent;
-  text-align: left;
-  margin-top: 10px;
-  word-spacing: 1px;
-  letter-spacing: 0.3px;
-  font-size: 13px;
+  border: none;
   color: rgb(106, 100, 111);
+  display: flex;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  margin-top: 10px;
+  text-align: left;
+  word-spacing: 1px;
 }
 
 .product-content {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 160px;
   justify-content: space-between;
-  align-items: center;
+  width: 160px;
 }
 
-#all-products {
+.all-products {
   display: flex;
   flex-flow: row wrap;
-  gap: 60px;
+  gap: 70px;
 }
 
-#button-add {
-  width: 200px;
-  margin-top: 10px;
-  border-radius: 10px;
+.button-add {
+  background-color: rgb(57, 208, 92);
   border: none;
-  color:  rgb(74, 17, 112);
+  border-radius: 10px;
+  color: rgb(74, 17, 112);
   font-size: 11px;
   font-weight: 600;
-  text-transform: Uppercase;
   height: 35px;
-  background-color: rgb(57, 208, 92);
+  margin-top: 10px;
+  text-transform: uppercase;
   transition: transform 300ms;
+  width: 200px;
 }
 
-#button-add:hover {
-  background-color: rgb(219, 232, 212);
-  color: rgb(15, 86, 15);
-  border: 1px solid rgb(15, 86, 15);
-  filter: drop-shadow(3px 3px 3px rgba(173, 210, 172, 0.576));
-  transition: 500ms;
+.button-add:hover {
+  background-color: rgb(227, 212, 232);
+  border: 1px solid rgb(133, 37, 201);
+  color: rgb(50, 8, 69);
+  filter: drop-shadow(4px 4px 5px rgba(193, 172, 210, 0.576));
   transform: translateY(-2.5px);
+  transition: 500ms;
 }
 
-#button-add:active {
+.button-add:active {
   background-color: rgb(133, 37, 201);
-  color: white;
   border: none;
+  color: white;
   filter: drop-shadow(3px 3px 3px rgba(190, 172, 210, 0.576));
 }
 
-#sad {
+.sad {
   font-size: 80px;
   margin-top: 100px;
 }
 
 .notFound {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   color: rgb(50, 8, 69);
+  display: flex;
+  flex-direction: column;
 }

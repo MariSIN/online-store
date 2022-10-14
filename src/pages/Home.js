@@ -47,18 +47,18 @@ export default function Home() {
             type="button"
             data-testid="query-button"
             onClick={ onSearch }
-            id="search-button"
+            className="search-button"
           >
             <ImSearch />
           </button>
         </div>
-        <Link data-testid="shopping-cart-button" to="/cart" id="cart">
+        <Link data-testid="shopping-cart-button" to="/cart" className="cart">
           <RiShoppingCartLine />
         </Link>
       </div>
       <div className="content-category">
-        <div id="all-classes">
-          <h2 id="title-categories">Categorias</h2>
+        <div className="all-classes">
+          <h2 className="title-categories">Categorias</h2>
           <div className="detalhe"> </div>
           <div className="categories">
             {categories.length > 0
