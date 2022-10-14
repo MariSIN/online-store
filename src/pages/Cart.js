@@ -75,8 +75,8 @@ export default function Cart() {
             >
               +
             </button>
-            <p data-testid="shopping-cart-product-price">
-              { (product.price * product.quantity).toFixed(2) }
+            <p data-testid="shopping-cart-product-price" className="total-product">
+              { `R$${(product.price * product.quantity).toFixed(2)}` }
             </p>
           </div>
         ))}

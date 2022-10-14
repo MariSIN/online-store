@@ -15,6 +15,7 @@
   display: flex;
   padding: 50px;
   flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 #button-remove {
@@ -26,7 +27,6 @@
   font-size: 25px;
   color: rgb(168, 61, 218);
   margin-top: 40px;
-  margin-right: 20px;
 }
 
 .cart-img {
@@ -45,17 +45,15 @@
 
 #description-product {
   display: flex;
-  width: 400px;
   flex-flow: row wrap;
-  margin: 40px;
   align-self: center;
+  margin-right: 20px;
 }
 
 #quantity {
   background-color: rgb(205, 204, 251);
   height: 20px;
   width: 20px;
-  margin: 15px;
   text-align: center;
   border-radius: 100%;
   align-self: center;
@@ -66,6 +64,12 @@
   height: 20px;
   background-color: transparent;
   border: none;
-  font-size: 22px;
+  font-size: 24px;
   align-self: center;
+}
+
+.total-product {
+  display: flex;
+  align-self: center;
+  margin-left: 20px;
 }
