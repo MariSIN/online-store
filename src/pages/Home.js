@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../style/ProductList.css';
 import { Link } from 'react-router-dom';
-import { RiShoppingCartLine } from 'react-icons/ri';
+import { RiShoppingCart2Fill } from 'react-icons/ri';
 import { ImSearch } from 'react-icons/im';
 import ProductList from '../component/ProductList';
 
@@ -53,7 +53,7 @@ export default function Home() {
           </button>
         </div>
         <Link data-testid="shopping-cart-button" to="/cart" className="cart">
-          <RiShoppingCartLine />
+          <RiShoppingCart2Fill />
         </Link>
       </div>
       <div className="content-category">

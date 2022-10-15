@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TiDelete } from 'react-icons/ti';
+import { TiDelete, TiArrowBack } from 'react-icons/ti';
 import {
   getCartProducts, changeQuantityOfProduct, onRemoveProduct,
 } from '../services/api';
@@ -22,7 +22,10 @@ export default function Cart() {
   if (products.length <= 0) {
     return (
       <>
-        <Link to="/">Back</Link>
+        <Link to="/" className="back-page">
+          <TiArrowBack className="icon-back" />
+          Voltar
+        </Link>
         <p data-testid="shopping-cart-empty-message">
           Seu carrinho está vazio
         </p>
@@ -32,7 +35,10 @@ export default function Cart() {
 
   return (
     <>
-      <Link to="/">Back</Link>
+      <Link to="/" className="back-page">
+        <TiArrowBack className="icon-back" />
+        Voltar
+      </Link>
       <div className="all-cart-products">
         <h2 className="title-cart">Carrinho de Compras</h2>
         {products.map((product) => (

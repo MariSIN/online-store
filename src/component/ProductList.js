@@ -41,14 +41,14 @@ function ProductList({ products }) {
           key={ prod.id }
           className="product-content"
         >
-          <img src={ prod.thumbnail } alt={ prod.title } />
           <button
             type="button"
             data-testid="product-detail-link"
             className="button-products"
             onClick={ () => history.push(`/product/${prod.id}`) }
           >
-            { prod.title }
+            <img src={ prod.thumbnail } alt={ prod.title } className="img-products" />
+            <p className="description-products">{ prod.title }</p>
           </button>
           <button
             type="button"

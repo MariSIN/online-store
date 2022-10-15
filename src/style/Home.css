@@ -7,10 +7,32 @@
   font-family: Montserrat , sans-serif;
 }
 
+body {
+  background-color: rgb(241, 239, 244);
+}
+
 .title-categories {
-  color: rgb(81, 31, 115);
+  color: rgb(123, 44, 191);
   font-weight: 900;
   letter-spacing: 1.5px;
+}
+
+.input-categories {
+  background-color: rgba(90, 24, 154, 1);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.all-classes {
+  background-color: white;
+  box-shadow: 1px 1px 4px 0.2px rgba(0, 0, 0, 0.132);
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  padding: 20px 80px 20px 40px;
 }
 
 .categories {
@@ -21,46 +43,30 @@
   width: 250px;
 }
 
-.all-classes {
-  display: flex;
-  flex-direction: column;
-  margin-right: 40px;
-}
-
 .content-category {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
-  margin-left: 36px;
 }
 
 .categorys-button {
   background-color: transparent;
   border: none;
+  color: rgba(100, 88, 112, 1);
   font-size: 15px;
   word-spacing: 1px;
 }
 
 .categorys-button:hover {
   font-size: 17px;
-  -webkit-text-stroke-color: rgb(23, 194, 63);
+  -webkit-text-stroke-color: rgb(32, 220, 96);
   -webkit-text-stroke-width: 0.8px;
   transform: translateY(-2px);
   transition: 300ms;
 }
 
-.input-categories {
-  background-color: rgb(96, 48, 140);
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  padding: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
 .detalhe {
-  background-color: rgba(154, 153, 242);
+  background-color: rgba(123, 44, 191);
   height: 1.5px;
   margin-bottom: 25px;
   width: 250px;
@@ -74,10 +80,10 @@
 
 .input-search {
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   height: 35px;
   padding-left: 10px;
-  width: 280px;
+  width: 250px;
 }
 
 .input-search:focus {
@@ -88,15 +94,16 @@
   background-color: transparent;
   border: none;
   color: rgb(114, 116, 123);
-  left: 285px;
+  font-size: 20px;
+  left: 255px;
   position: absolute;
-  top: 31px;
+  top: 28px;
   transition: transform 300ms;
 }
 
 .search-button:hover {
-  color: rgb(18, 159, 51);
-  font-size: 18px;
-  transform: translateY(-1px);
-  transition: 300ms;
+  color: rgb(32, 220, 96);
+  font-size: 29px;
+  transform: translateY(-5px) translateX(-3px);
+  transition: 500ms;
 }

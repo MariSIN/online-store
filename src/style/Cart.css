@@ -73,3 +73,17 @@
   display: flex;
   margin-left: 20px;
 }
+
+.back-page {
+  display: flex;
+  font-size: 20px;
+  gap: 5px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  width: 100px;
+}
+
+.icon-back {
+  font-size: 28px;
+}
