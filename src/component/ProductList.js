@@ -48,7 +48,13 @@ function ProductList({ products }) {
             onClick={ () => history.push(`/product/${prod.id}`) }
           >
             <img src={ prod.thumbnail } alt={ prod.title } className="img-products" />
-            <p className="description-products">{ prod.title }</p>
+            <span>
+              <p className="description-products">{ prod.title }</p>
+              <p className="price">
+                <span className="money">R$</span>
+                {`${(prod.price).toFixed(2)}`}
+              </p>
+            </span>
           </button>
           <button
             type="button"
