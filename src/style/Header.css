@@ -1,0 +1,47 @@
+@font-face {
+  font-family: Nova Mono;
+  src: local('Nova_Mono') , url('../fonts/Nova_Mono/NovaMono-Regular.ttf')
+    format('truetype');
+}
+
+.header {
+  background-color: rgba(90, 24, 154, 1);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.bag-shop {
+  color: rgb(32, 220, 96);
+  font-size: 60px;
+  padding: 0;
+  width: 60px;
+}
+
+.title-header {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 180px;
+}
+
+.title-header-h1, .title-header-h3 {
+  margin: 0;
+}
+
+.title-header-h1 {
+  font-family: Nova Mono , cursive;
+  font-size: 32px;
+}
+
+.title-header-h3 {
+  color: rgb(53, 228, 81);
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  text-transform: uppercase;
+  top: 45px;
+}

@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TiDelete, TiArrowBack } from 'react-icons/ti';
+import { TiArrowBack } from 'react-icons/ti';
+import { HiOutlineEmojiSad } from 'react-icons/hi';
+import { BsX } from 'react-icons/bs';
 import {
   getCartProducts, changeQuantityOfProduct, onRemoveProduct,
 } from '../services/api';
+import Header from '../component/Header';
 import '../style/Cart.css';
+import '../style/Header.css';
+import '../style/ProductList.css';
 
 export default function Cart() {
   const [products, setProducts] = useState(getCartProducts());
@@ -26,15 +31,21 @@ export default function Cart() {
           <TiArrowBack className="icon-back" />
           Voltar
         </Link>
-        <p data-testid="shopping-cart-empty-message">
-          Seu carrinho está vazio
-        </p>
+        <div className="notFound">
+          <HiOutlineEmojiSad
+            className="sad"
+          />
+          <h2 data-testid="shopping-cart-empty-message">
+            Seu carrinho está vazio
+          </h2>
+        </div>
       </>
     );
   }
 
   return (
     <>
+      <Header />
       <Link to="/" className="back-page">
         <TiArrowBack className="icon-back" />
         Voltar
@@ -50,7 +61,7 @@ export default function Cart() {
               data-testid="remove-product"
               onClick={ () => onRemove(product.id) }
             >
-              <TiDelete className="icon-delete" />
+              <BsX className="icon-delete" />
             </button>
             <img src={ product.thumbnail } alt={ product.title } className="cart-img" />
             <p
@@ -59,30 +70,33 @@ export default function Cart() {
             >
               { product.title }
             </p>
-            <button
-              type="button"
-              data-testid="product-decrease-quantity"
-              onClick={ () => onChangeQuantity(product.id, (qt) => qt - 1) }
-              className="sub-sum-buttom"
-            >
-              -
-            </button>
-            <div
-              data-testid="shopping-cart-product-quantity"
-              className="quantity"
-            >
-              { product.quantity }
+            <div className="content-quantity">
+              <button
+                type="button"
+                data-testid="product-decrease-quantity"
+                onClick={ () => onChangeQuantity(product.id, (qt) => qt - 1) }
+                className="sub-sum-buttom"
+              >
+                -
+              </button>
+              <div
+                data-testid="shopping-cart-product-quantity"
+                className="quantity"
+              >
+                { product.quantity }
+              </div>
+              <button
+                type="button"
+                data-testid="product-increase-quantity"
+                className="sub-sum-buttom"
+                onClick={ () => onChangeQuantity(product.id, (qt) => qt + 1) }
+              >
+                +
+              </button>
             </div>
-            <button
-              type="button"
-              data-testid="product-increase-quantity"
-              className="sub-sum-buttom"
-              onClick={ () => onChangeQuantity(product.id, (qt) => qt + 1) }
-            >
-              +
-            </button>
             <p data-testid="shopping-cart-product-price" className="total-product">
-              { `R$${(product.price * product.quantity).toFixed(2)}` }
+              <span className="money">R$</span>
+              { `${(product.price * product.quantity).toFixed(2)}` }
             </p>
           </div>
         ))}

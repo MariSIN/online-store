@@ -18,10 +18,10 @@ body {
 }
 
 .input-categories {
+  align-items: center;
   background-color: rgba(90, 24, 154, 1);
   display: flex;
   justify-content: space-between;
-  padding: 20px;
   padding-left: 30px;
   padding-right: 30px;
 }

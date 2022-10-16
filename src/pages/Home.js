@@ -9,6 +9,7 @@ import {
   getCategories,
   getProductsFromCategoryAndQuery,
 } from '../services/api';
+import Header from '../component/Header';
 
 export default function Home() {
   const [products, setProducts] = useState({ searched: false, results: [] });
@@ -52,6 +53,7 @@ export default function Home() {
             <ImSearch />
           </button>
         </div>
+        <Header />
         <Link data-testid="shopping-cart-button" to="/cart" className="cart">
           <RiShoppingCart2Fill />
         </Link>

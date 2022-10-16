@@ -88,8 +88,10 @@
 }
 
 .money {
+  align-self: flex-end;
   color: rgb(174, 154, 207);
   font-size: 16px;
+  font-weight: 600;
   margin-right: 2px;
 }
 

@@ -1,21 +1,25 @@
 .title-cart {
+  color: rgb(60, 9, 108);
+  margin-bottom: 50px;
   text-align: center;
 }
 
 .all-cart-products {
-  box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0.1px 0.1px 5px 0.1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   margin: 40px;
-  max-width: 900px;
+  max-width: 740px;
   padding: 5px;
+  padding-top: 30px;
 }
 
 .cart-content {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  padding: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .button-remove {
@@ -24,18 +28,24 @@
 }
 
 .icon-delete {
-  color: rgb(168, 61, 218);
-  font-size: 25px;
-  margin-top: 40px;
+  color: rgb(143, 0, 255);
+  font-size: 28px;
+  margin-right: 20px;
 }
 
 .cart-img {
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 0.1px 0.1px 5px 0.1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+  margin-right: 30px;
   margin-top: 40px;
-  width: 120px;
+  padding: 20px;
+  width: 107px;
 }
 
 .separator {
-  background-color: rgba(154, 153, 242);
+  background-color: rgba(145, 130, 156, 0.746);
   display: flex;
   flex-direction: column;
   height: 1px;
@@ -45,36 +55,48 @@
 
 .description-product {
   align-self: center;
+  color: rgb(78, 68, 85);
   display: flex;
   flex-flow: row wrap;
-  margin-right: 20px;
+  max-width: 180px;
+}
+
+.content-quantity {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .quantity {
-  align-self: center;
-  background-color: rgb(205, 204, 251);
+  background-color: rgb(181, 161, 214);
   border-radius: 100%;
-  color: rgb(81, 31, 115);
+  color: white;
+  font-weight: 600;
   height: 20px;
   text-align: center;
   width: 20px;
 }
 
 .sub-sum-buttom {
-  align-self: center;
   background-color: transparent;
   border: none;
+  color: rgb(181, 161, 214);
   font-size: 24px;
   height: 20px;
 }
 
 .total-product {
   align-self: center;
+  color: rgb(90, 24, 154);
   display: flex;
+  font-size: 20px;
+  font-weight: 600;
   margin-left: 20px;
+  padding: 5px;
 }
 
 .back-page {
+  color: rgb(25, 157, 69);
   display: flex;
   font-size: 20px;
   gap: 5px;
