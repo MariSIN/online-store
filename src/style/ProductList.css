@@ -1,5 +1,13 @@
 .initial-message {
-  display: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.describe-initial {
+  position: relative;
+  right: 520px;
+  top: 60px;
 }
 
 .all-products {

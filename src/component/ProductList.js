@@ -10,9 +10,14 @@ function ProductList({ products }) {
 
   if (!products.searched) {
     return (
-      <p data-testid="home-initial-message" className="initial-message">
-        Digite algum termo de pesquisa ou escolha uma categoria.
-      </p>
+      <div data-testid="home-initial-message" className="initial-message">
+        <h1 className="title-initial">
+          Você ainda não realizou uma busca
+        </h1>
+        <h4 className="describe-initial">
+          Digite algum termo de pesquisa ou escolha uma categoria
+        </h4>
+      </div>
     );
   }
 
