@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../style/Cart.css';
 import PropTypes from 'prop-types';
 
 export default function TotalProducts(props) {
@@ -15,8 +16,12 @@ export default function TotalProducts(props) {
   }, [valor]);
 
   return (
-    <div>
-      <div>{total.toFixed(2)}</div>
+    <div className="content-total">
+      <h3 className="title-total-price-products">Valor Total da Compra:</h3>
+      <div className="total-value">
+        R$
+        {total.toFixed(2)}
+      </div>
     </div>
   );
 }

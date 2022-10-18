@@ -51,61 +51,69 @@ export default function Cart() {
         <TiArrowBack className="icon-back" />
         Voltar
       </Link>
-      <div className="all-cart-products">
-        <h2 className="title-cart">Carrinho de Compras</h2>
-        {products.map((product) => (
-          <div className="cart-content" key={ product.id }>
-            <div className="separator"> </div>
-            <button
-              className="button-remove"
-              type="button"
-              data-testid="remove-product"
-              onClick={ () => onRemove(product.id) }
-            >
-              <BsX className="icon-delete" />
-            </button>
-            <img src={ product.thumbnail } alt={ product.title } className="cart-img" />
-            <p
-              data-testid="shopping-cart-product-name"
-              className="description-product"
-            >
-              { product.title }
-            </p>
-            <div className="content-quantity">
+      <div className="content-cart">
+        <div className="all-cart-products">
+          <h2 className="title-cart">Carrinho de Compras</h2>
+          {products.map((product) => (
+            <div className="cart-content" key={ product.id }>
+              <div className="separator"> </div>
               <button
+                className="button-remove"
                 type="button"
-                data-testid="product-decrease-quantity"
-                onClick={ () => onChangeQuantity(product.id, (qt) => qt - 1) }
-                className="sub-sum-buttom"
+                data-testid="remove-product"
+                onClick={ () => onRemove(product.id) }
               >
-                -
+                <BsX className="icon-delete" />
               </button>
-              <div
-                data-testid="shopping-cart-product-quantity"
-                className="quantity"
+              <img src={ product.thumbnail } alt={ product.title } className="cart-img" />
+              <p
+                data-testid="shopping-cart-product-name"
+                className="description-product"
               >
-                { product.quantity }
+                { product.title }
+              </p>
+              <div className="content-quantity">
+                <button
+                  type="button"
+                  data-testid="product-decrease-quantity"
+                  onClick={ () => onChangeQuantity(product.id, (qt) => qt - 1) }
+                  className="sub-sum-buttom"
+                >
+                  -
+                </button>
+                <div
+                  data-testid="shopping-cart-product-quantity"
+                  className="quantity"
+                >
+                  { product.quantity }
+                </div>
+                <button
+                  type="button"
+                  data-testid="product-increase-quantity"
+                  className="sub-sum-buttom"
+                  onClick={ () => onChangeQuantity(product.id, (qt) => qt + 1) }
+                >
+                  +
+                </button>
               </div>
-              <button
-                type="button"
-                data-testid="product-increase-quantity"
-                className="sub-sum-buttom"
-                onClick={ () => onChangeQuantity(product.id, (qt) => qt + 1) }
-              >
-                +
-              </button>
+              <p data-testid="shopping-cart-product-price" className="total-product">
+                <span className="money">R$</span>
+                { `${(product.price * product.quantity).toFixed(2)}` }
+              </p>
             </div>
-            <p data-testid="shopping-cart-product-price" className="total-product">
-              <span className="money">R$</span>
-              { `${(product.price * product.quantity).toFixed(2)}` }
-            </p>
-          </div>
-        ))}
-        <div>
+          ))}
+        </div>
+        <div className="total-price-products">
           <TotalProducts valor={ products } />
+          <Link
+            data-testid="checkout-products"
+            to="/checkout"
+            className="button-finish-shop"
+          >
+            Finalizar Compra
+          </Link>
         </div>
       </div>
-      <Link data-testid="checkout-products" to="/checkout">Terminar compra</Link>
     </>
   );
 }
