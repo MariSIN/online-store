@@ -62,6 +62,7 @@ export function addToCart(product) {
 
 export function changeQuantityOfProduct(id, cb) {
   const cart = JSON.parse(window.localStorage.getItem('cart'));
+
   const productIndex = cart.map((prod) => prod.id).indexOf(id);
 
   const negativeOne = -1;

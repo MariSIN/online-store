@@ -10,6 +10,7 @@ import Header from '../component/Header';
 import '../style/Cart.css';
 import '../style/Header.css';
 import '../style/ProductList.css';
+import TotalProducts from '../component/TotalProducts';
 
 export default function Cart() {
   const [products, setProducts] = useState(getCartProducts());
@@ -100,6 +101,9 @@ export default function Cart() {
             </p>
           </div>
         ))}
+        <div>
+          <TotalProducts valor={ products } />
+        </div>
       </div>
       <Link data-testid="checkout-products" to="/checkout">Terminar compra</Link>
     </>

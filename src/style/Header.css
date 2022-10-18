@@ -15,7 +15,9 @@
 .bag-shop {
   color: rgb(32, 220, 96);
   font-size: 60px;
+  left: 12px;
   padding: 0;
+  position: relative;
   width: 60px;
 }
 
