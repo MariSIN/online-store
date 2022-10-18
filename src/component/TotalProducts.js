@@ -24,4 +24,3 @@ export default function TotalProducts(props) {
 TotalProducts.propTypes = {
   valor: PropTypes.instanceOf(Array).isRequired,
 };
-// quantidade de um produto x o valor dele, e somar o valor total dos dois
