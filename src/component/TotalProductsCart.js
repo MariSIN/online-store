@@ -15,7 +15,11 @@ export default function TotalProductsCart(props) {
     setTotal((prev) => prev + sum);
   }, [valor]);
 
-  return <div data-testid="shopping-cart-size">{total === 0 ? null : total}</div>;
+  return (
+    <div data-testid="shopping-cart-size" className="quantity-cart">
+      {total === 0 ? null : total}
+    </div>
+  );
 }
 
 TotalProductsCart.propTypes = {

@@ -6,6 +6,7 @@ import {
   addToCart, addEvaluation,
   getEvaluation,
   getCartProducts } from '../services/api';
+import '../style/Product.css';
 
 const validateEmail = (email) => String(email)
   .toLowerCase()
@@ -76,7 +77,11 @@ export default function Product() {
       >
         Adicionar ao carrinho
       </button>
-      <TotalProductsCart valor={ quantityProducts } />
+      <div
+        className="content-quantity-product"
+      >
+        <TotalProductsCart valor={ quantityProducts } />
+      </div>
       <div>
         <input
           type="email"

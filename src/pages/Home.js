@@ -63,6 +63,7 @@ export default function Home() {
         <Header />
         <Link data-testid="shopping-cart-button" to="/cart" className="cart">
           <RiShoppingCart2Fill />
+          <TotalProductsCart valor={ quantityProducts } />
         </Link>
       </div>
       <div className="content-category">
@@ -85,7 +86,6 @@ export default function Home() {
           </div>
         </div>
         <ProductList products={ products } onAddItems={ onAddItems } />
-        <TotalProductsCart valor={ quantityProducts } />
         <div> </div>
       </div>
     </>
