@@ -36,7 +36,6 @@ function ProductList({ products, onAddItems }) {
       </>
     );
   }
-
   return (
     <div className="all-products">
       { products.results.map((prod) => (
