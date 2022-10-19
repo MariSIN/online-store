@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getProductById, addToCart, addEvaluation, getEvaluation } from '../services/api';
+import TotalProductsCart from '../component/TotalProductsCart';
+import { getProductById, addToCart, addEvaluation, getEvaluation, getCartProducts } from '../services/api';
 
 const validateEmail = (email) => String(email)
   .toLowerCase()
@@ -12,6 +13,7 @@ export default function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [evaluations, setEvaluations] = useState([]);
+  const [quantityProducts, setQuantity] = useState(getCartProducts());
 
   const [email, setEmail] = useState('');
   const [rating, setRating] = useState(0);
@@ -41,6 +43,10 @@ export default function Product() {
     setEvaluations(getEvaluation(id));
   }, [id]);
 
+  const onAddItems = () => {
+    setQuantity(getCartProducts());
+  };
+
   return (
     <>
       <Link to="/">Back</Link>
@@ -59,11 +65,14 @@ export default function Product() {
       <button
         type="button"
         data-testid="product-detail-add-to-cart"
-        onClick={ () => addToCart(product) }
+        onClick={ () => {
+          onAddItems();
+          addToCart(product);
+        } }
       >
         Adicionar ao carrinho
       </button>
-
+      <TotalProductsCart valor={ quantityProducts } />
       <div>
         <input
           type="email"
