@@ -114,9 +114,11 @@ body {
   color: rgb(24, 100, 42);
   font-size: 12px;
   font-weight: 700;
-  padding: 3px;
+  padding: 2px;
   position: absolute;
   right: 0;
+  text-align: center;
   top: 0;
   transform: translate(30%, -30%);
+  width: 14px;
 }
