@@ -3,15 +3,18 @@ import '../style/ProductList.css';
 import { Link } from 'react-router-dom';
 import { RiShoppingCart2Fill } from 'react-icons/ri';
 import { ImSearch } from 'react-icons/im';
+import TotalProductsCart from '../component/TotalProductsCart';
 import ProductList from '../component/ProductList';
 
-import {
+import { getCartProducts,
   getCategories,
   getProductsFromCategoryAndQuery,
 } from '../services/api';
 import Header from '../component/Header';
 
 export default function Home() {
+  const [quantityProducts, setQuantity] = useState(getCartProducts());
+
   const [products, setProducts] = useState({ searched: false, results: [] });
   const [categories, setCategories] = useState([]);
 
@@ -31,6 +34,10 @@ export default function Home() {
   const onCategoryFilter = async (id) => {
     const result = await getProductsFromCategoryAndQuery(id);
     setProducts({ searched: true, results: result?.results });
+  };
+
+  const onAddItems = () => {
+    setQuantity(getCartProducts());
   };
 
   return (
@@ -77,8 +84,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-
-        <ProductList products={ products } />
+        <ProductList products={ products } onAddItems={ onAddItems } />
+        <TotalProductsCart valor={ quantityProducts } />
+        <div> </div>
       </div>
     </>
   );

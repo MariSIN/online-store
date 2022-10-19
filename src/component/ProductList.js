@@ -5,7 +5,7 @@ import { addToCart } from '../services/api';
 import '../style/ProductList.css';
 import '../style/Home.css';
 
-function ProductList({ products }) {
+function ProductList({ products, onAddItems }) {
   const history = useHistory();
 
   if (!products.searched) {
@@ -65,7 +65,10 @@ function ProductList({ products }) {
             type="button"
             className="button-add"
             data-testid="product-add-to-cart"
-            onClick={ () => addToCart(prod) }
+            onClick={ () => {
+              addToCart(prod);
+              onAddItems();
+            } }
           >
             Adicionar ao carrinho
           </button>
@@ -80,6 +83,7 @@ ProductList.propTypes = {
     searched: PropTypes.bool,
     results: PropTypes.arrayOf(PropTypes.shape({})),
   }).isRequired,
+  onAddItems: PropTypes.func.isRequired,
 };
 
 export default ProductList;

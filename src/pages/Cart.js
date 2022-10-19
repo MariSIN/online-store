@@ -14,7 +14,6 @@ import TotalProducts from '../component/TotalProducts';
 
 export default function Cart() {
   const [products, setProducts] = useState(getCartProducts());
-
   const onChangeQuantity = (id, cb) => {
     changeQuantityOfProduct(id, cb);
     setProducts(getCartProducts());
@@ -104,14 +103,16 @@ export default function Cart() {
           ))}
         </div>
         <div className="total-price-products">
-          <TotalProducts valor={ products } />
-          <Link
-            data-testid="checkout-products"
-            to="/checkout"
-            className="button-finish-shop"
-          >
-            Finalizar Compra
-          </Link>
+          <div className="content-total-cart">
+            <TotalProducts valor={ products } />
+            <Link
+              data-testid="checkout-products"
+              to="/checkout"
+              className="button-finish-shop"
+            >
+              Finalizar Compra
+            </Link>
+          </div>
         </div>
       </div>
     </>

@@ -135,6 +135,11 @@
   text-align: center;
 }
 
+.content-total-cart {
+  position: fixed;
+  top: 400px;
+}
+
 .title-total-price-products {
   color: rgb(30, 8, 50);
   font-size: 20px;

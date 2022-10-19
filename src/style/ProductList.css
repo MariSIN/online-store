@@ -1,13 +1,13 @@
 .initial-message {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 100px;
+  margin-bottom: 500px;
 }
 
 .describe-initial {
-  position: relative;
-  right: 520px;
-  top: 60px;
+  margin-top: -5px;
+  text-align: center;
 }
 
 .all-products {
