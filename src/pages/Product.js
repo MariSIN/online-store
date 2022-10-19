@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import TotalProductsCart from '../component/TotalProductsCart';
-import { getProductById, addToCart, addEvaluation, getEvaluation, getCartProducts } from '../services/api';
+import {
+  getProductById,
+  addToCart, addEvaluation,
+  getEvaluation,
+  getCartProducts } from '../services/api';
 
 const validateEmail = (email) => String(email)
   .toLowerCase()
