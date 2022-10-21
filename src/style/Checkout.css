@@ -1,0 +1,27 @@
+.content-revise {
+  display: flex;
+  gap: 5px;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.header-finaly {
+  position: relative;
+}
+
+.cart-finaly {
+  color: rgba(90, 24, 154, 1);
+  font-size: 30px;
+  position: absolute;
+  right: 40px;
+  top: 25px;
+}
+
+.finaly {
+  position: absolute;
+  top: -12px;
+}
+
+.payment-form {
+  display: flex;
+}

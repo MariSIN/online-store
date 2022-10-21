@@ -31,9 +31,14 @@ function ProductList({ products, onAddItems }) {
           <HiOutlineEmojiSad
             className="sad"
           />
-          <h2>
+          <h1 className="title-initial">
             Nenhum produto foi encontrado
-          </h2>
+          </h1>
+          <h4
+            className="describe-initial"
+          >
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </h4>
         </div>
         <div className="empty-content"> </div>
       </>

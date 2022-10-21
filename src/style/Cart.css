@@ -9,9 +9,10 @@
   display: flex;
   flex-direction: column;
   margin: 40px;
-  max-width: 740px;
-  padding: 5px;
-  padding-top: 30px;
+  max-width: 900px;
+  padding: 20px;
+  padding-top: 50px;
+  position: relative;
 }
 
 .cart-content {
@@ -119,7 +120,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 554px;
+  text-align: center;
+  width: 550px;
 }
 
 .content-total {
@@ -130,19 +132,22 @@
 
 .total-value {
   color: rgb(30, 8, 50);
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
   text-align: center;
 }
 
 .content-total-cart {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  top: 400px;
+  top: 250px;
 }
 
 .title-total-price-products {
   color: rgb(30, 8, 50);
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .button-finish-shop {
@@ -154,8 +159,80 @@
   font-weight: 600;
   height: 38.63px;
   justify-content: center;
-  margin-top: 70px;
+  margin-bottom: 70px;
+  margin-top: 50px;
   text-decoration: none;
   width: 244.65px;
   word-spacing: 2px;
+}
+
+@media ( max-width : 1300px ) {
+
+  .all-cart-products {
+    max-width: 900px;
+    min-width: 600px;
+  }
+
+  .content-total {
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .total-value {
+    color: rgb(30, 8, 50);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .content-total-cart {
+    position: unset;
+  }
+
+  .content-cart {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cart-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .separator {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .icon-delete {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .cart-img {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 0;
+  }
+
+  .description-product {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+  }
+
+  .content-quantity {
+    margin: 0;
+  }
+
+  .button-remove {
+    grid-column: 1 / -1;
+    justify-self: right;
+    margin-top: 8px;
+    width: fit-content;
+  }
+
 }

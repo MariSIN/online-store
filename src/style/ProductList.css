@@ -3,9 +3,19 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 500px;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+.title-initial {
+  color: rgb(32, 220, 96);
+  font-size: 30px;
+  text-align: center;
 }
 
 .describe-initial {
+  color: rgb(145, 130, 156);
+  font-size: 20px;
   margin-top: -5px;
   text-align: center;
 }
@@ -116,10 +126,10 @@
 
 .notFound {
   align-items: center;
-  color: rgb(50, 8, 69);
+  color: rgb(145, 130, 156);
   display: flex;
   flex-direction: column;
-  margin-left: 200px;
+  margin-left: 40px;
 }
 
 .free {
