@@ -23,6 +23,7 @@ export default function Product() {
   const [email, setEmail] = useState('');
   const [rating, setRating] = useState(0);
   const [text, setText] = useState('');
+  const [shipping, setShipping] = useState(false);
 
   const [error, setError] = useState(false);
 
@@ -44,6 +45,7 @@ export default function Product() {
   useEffect(() => {
     getProductById(id).then((res) => {
       setProduct(res);
+      setShipping(res.shipping.free_shipping);
     });
     setEvaluations(getEvaluation(id));
   }, [id]);
@@ -67,6 +69,7 @@ export default function Product() {
       <p data-testid="product-detail-price">
         { product && product.price }
       </p>
+      <div>{ shipping && 'Frete Grátis'}</div>
       <button
         type="button"
         data-testid="product-detail-add-to-cart"

@@ -54,6 +54,8 @@ function ProductList({ products, onAddItems }) {
             className="button-products"
             onClick={ () => history.push(`/product/${prod.id}`) }
           >
+            {prod.shipping.free_shipping && (
+              <div data-testid="free-shipping">Frete Grátis</div>)}
             <img src={ prod.thumbnail } alt={ prod.title } className="img-products" />
             <span>
               <p className="description-products">{ prod.title }</p>
