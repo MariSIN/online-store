@@ -45,7 +45,6 @@ body {
 .content-category {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
 }
 
 .categorys-button {
