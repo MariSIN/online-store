@@ -5,7 +5,7 @@ import '../style/Header.css';
 import '../style/ProductList.css';
 import '../style/Checkout.css';
 import { Link, useHistory } from 'react-router-dom';
-import { RiShoppingCart2Fill } from 'react-icons/ri';
+import { RiShoppingCart2Fill, RiBarcodeLine } from 'react-icons/ri';
 import { BsX } from 'react-icons/bs';
 import Header from '../component/Header';
 import {
@@ -127,74 +127,69 @@ export default function Checkout() {
             </>
           ))}
         </div>
-      </div>
-      <div>
-        <label htmlFor="fullName">
-          Nome Completo:
+        <form className="payment-form">
+          <h2 className="title-cart title-checkout">Informações do Comprador</h2>
           <input
             value={ state.fullName }
             onChange={ onChange('fullName') }
             data-testid="checkout-fullname"
             id="fullName"
+            placeholder="Nome Completo"
+            className="info"
           />
-        </label>
-        <div className="payment-form">
-          <label htmlFor="email">
-            E-mail:
+          <input
+            value={ state.email }
+            onChange={ onChange('email') }
+            data-testid="checkout-email"
+            id="email"
+            placeholder="E-mail"
+            className="info"
+          />
+          <input
+            value={ state.cpf }
+            onChange={ onChange('cpf') }
+            data-testid="checkout-cpf"
+            placeholder="CPF"
+            className="info"
+          />
+          <input
+            value={ state.phone }
+            onChange={ onChange('phone') }
+            data-testid="checkout-phone"
+            placeholder="Telefone"
+            className="info"
+          />
+          <input
+            value={ state.cep }
+            onChange={ onChange('cep') }
+            data-testid="checkout-cep"
+            placeholder=" CEP"
+            className="info CEP"
+          />
+          <input
+            value={ state.address }
+            onChange={ onChange('address') }
+            data-testid="checkout-address"
+            placeholder="Endereço"
+            className="info Adress"
+          />
+          <label htmlFor="payment" className="label-pay">
+            <p className="pay-form">Boleto</p>
             <input
-              value={ state.email }
-              onChange={ onChange('email') }
-              data-testid="checkout-email"
-              id="email"
-            />
-          </label>
-          <label htmlFor="cpf">
-            CPF:
-            <input
-              value={ state.cpf }
-              onChange={ onChange('cpf') }
-              data-testid="checkout-cpf"
-            />
-          </label>
-          <label htmlFor="phone">
-            Telefone:
-            <input
-              value={ state.phone }
-              onChange={ onChange('phone') }
-              data-testid="checkout-phone"
-            />
-          </label>
-          <label htmlFor="cep">
-            CEP:
-            <input
-              value={ state.cep }
-              onChange={ onChange('cep') }
-              data-testid="checkout-cep"
-            />
-          </label>
-          <label htmlFor="address">
-            Endereço:
-            <input
-              value={ state.address }
-              onChange={ onChange('address') }
-              data-testid="checkout-address"
-            />
-          </label>
-
-          <label htmlFor="payment">
-            Ticket
-            <input
+              className="pay"
               type="radio"
               checked={ state.payment === 'ticket' }
               onChange={ onChecked }
               name="payment"
               value="ticket"
-              data-testid="ticket-payment"
+              data-testid="ticket-payment pay"
             />
+            <RiBarcodeLine className="icon-payment" />
           </label>
           <label htmlFor="payment">
-            Visa
+            Cartão de Crédito
             <input
+              className="pay"
               type="radio"
               checked={ state.payment === 'visa' }
               onChange={ onChecked }
@@ -202,10 +197,8 @@ export default function Checkout() {
               value="visa"
               data-testid="visa-payment"
             />
-          </label>
-          <label htmlFor="payment">
-            Master
             <input
+              className="pay"
               type="radio"
               checked={ state.payment === 'master' }
               onChange={ onChecked }
@@ -213,10 +206,8 @@ export default function Checkout() {
               value="master"
               data-testid="master-payment"
             />
-          </label>
-          <label htmlFor="payment">
-            Elo
             <input
+              className="pay"
               type="radio"
               checked={ state.payment === 'elo' }
               onChange={ onChecked }
@@ -225,17 +216,19 @@ export default function Checkout() {
               data-testid="elo-payment"
             />
           </label>
-        </div>
+          <div className="separator checkout-separator"> </div>
+          <button
+            type="button"
+            data-testid="checkout-btn"
+            onClick={ onBuy }
+            className="button-finish-shop button-checkout"
+          >
+            Comprar
+          </button>
 
-        <button
-          type="button"
-          data-testid="checkout-btn"
-          onClick={ onBuy }
-        >
-          Comprar
-        </button>
+          {error && <p data-testid="error-msg">Campos inválidos</p>}
+        </form>
       </div>
-      {error && <p data-testid="error-msg">Campos inválidos</p>}
     </>
   );
 }

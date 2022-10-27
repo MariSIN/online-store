@@ -41,8 +41,9 @@
   overflow: hidden;
   text-align: start;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre-wrap;
   word-spacing: 1px;
+  word-wrap: break-word;
 }
 
 .button-products {
@@ -80,7 +81,7 @@
   border-radius: 5px;
   color: rgb(24, 100, 42);
   filter: drop-shadow(2px 3px 3px rgba(193, 172, 210, 0.576));
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   height: 38px;
   margin-bottom: 16px;
@@ -89,7 +90,7 @@
   width: 200px;
 }
 
-.button-add:hover {
+.button-add:hover, .button-finish-shop:hover {
   background-color: rgb(90, 24, 154);
   color: white;
   filter: drop-shadow(4px 4px 5px rgba(193, 172, 210, 0.576));

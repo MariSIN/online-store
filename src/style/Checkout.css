@@ -23,5 +23,74 @@
 }
 
 .payment-form {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 614px;
+  justify-items: center;
+  padding-top: 70px;
+  width: 719px;
+}
+
+.title-checkout {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.button-checkout {
+  border-style: none;
+  grid-column: 1 / -1;
+}
+
+.checkout-separator {
+  grid-column: 1 / -1;
+  max-width: 700px;
+}
+
+input label {
+  grid-column: 1 / -1;
+}
+
+.pay {
+  margin-top: 20px;
+  order: 1;
+}
+
+.label-pay {
+  align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 100px;
+}
+
+.info {
+  border: 1px solid rgba(145, 130, 156, 0.746);
+  border-radius: 8px;
+  font-size: 16px;
+  height: 40px;
+  padding: 5px;
+  padding-left: 12px;
+  width: 300px;
+}
+
+.CEP {
+  justify-self: flex-start;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.Adress {
+  margin-left: -100px;
+  width: 400px;
+}
+
+.icon-payment {
+  color: rgba(145, 130, 156, 0.746);
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+.pay-form {
+  margin-bottom: -20px;
 }
