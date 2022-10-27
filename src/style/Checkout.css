@@ -92,5 +92,7 @@ input label {
 }
 
 .pay-form {
+  color: rgb(78, 68, 85);
+  font-weight: 600;
   margin-bottom: -20px;
 }
