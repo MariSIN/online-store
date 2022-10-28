@@ -90,7 +90,7 @@ export default function Product() {
           <button
             type="button"
             data-testid="product-detail-add-to-cart"
-            className="button-add"
+            className="button-add size-add"
             onClick={ () => {
               onAddItems();
               addToCart(product);
@@ -111,13 +111,14 @@ export default function Product() {
           />
         </Link>
         <span className="content-avaluation">
+          <h2 className="title-cart">Avaliações</h2>
           <div className="form-rating">
             <input
               type="email"
               data-testid="product-detail-email"
               value={ email }
               onChange={ (e) => setEmail(e.target.value) }
-              className="Email"
+              className="info"
               placeholder="Email"
             />
             <div className="container">
@@ -150,26 +151,36 @@ export default function Product() {
               data-testid="product-detail-evaluation"
               onChange={ (e) => setText(e.target.value) }
               placeholder="Mensagem (opcional)"
+              className="info evaluation-text"
             />
             <button
               type="button"
               data-testid="submit-review-btn"
               onClick={ onSubmitEvaluation }
+              className="button-add size-add"
             >
               Avaliar
             </button>
             {error && <p data-testid="error-msg">Campos inválidos</p>}
           </div>
-        </span>
-      </div>
-      <div>
-        {evaluations.map((ev, key) => (
-          <div key={ key }>
-            <p data-testid="review-card-email">{ev.email}</p>
-            <p data-testid="review-card-rating">{ev.rating}</p>
-            <p data-testid="review-card-evaluation">{ev.text}</p>
+          <div>
+            {evaluations.map((ev, key) => (
+              <div key={ key }>
+                <span className="separator separator-ev"> </span>
+                <p data-testid="review-card-email" className="email-ev">
+                  {ev.email}
+                </p>
+                <span className="nota">
+                  Avaliação:
+                  <p data-testid="review-card-rating" className="score">
+                    {ev.rating}
+                  </p>
+                </span>
+                <p data-testid="review-card-evaluation" className="text-rt">{ev.text}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </span>
       </div>
     </>
   );
