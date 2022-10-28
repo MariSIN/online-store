@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { RiShoppingCart2Fill, RiStarFill } from 'react-icons/ri';
+import { TiArrowBack } from 'react-icons/ti';
 import TotalProductsCart from '../component/TotalProductsCart';
 import {
   getProductById,
@@ -7,6 +9,7 @@ import {
   getEvaluation,
   getCartProducts } from '../services/api';
 import '../style/Product.css';
+import Header from '../component/Header';
 
 const validateEmail = (email) => String(email)
   .toLowerCase()
@@ -42,6 +45,8 @@ export default function Product() {
     setText('');
   };
 
+  const number5 = 5;
+
   useEffect(() => {
     getProductById(id).then((res) => {
       setProduct(res);
@@ -56,70 +61,107 @@ export default function Product() {
 
   return (
     <>
-      <Link to="/">Back</Link>
-      <Link data-testid="shopping-cart-button" to="/cart">Carrinho</Link>
-      <p data-testid="product-detail-name">
-        { product && product.title }
-      </p>
-      <img
-        alt={ product && product.title }
-        src={ product && product.thumbnail }
-        data-testid="product-detail-image"
-      />
-      <p data-testid="product-detail-price">
-        { product && product.price }
-      </p>
-      <div>{ shipping && 'Frete Grátis'}</div>
-      <button
-        type="button"
-        data-testid="product-detail-add-to-cart"
-        onClick={ () => {
-          onAddItems();
-          addToCart(product);
-        } }
-      >
-        Adicionar ao carrinho
-      </button>
-      <div
-        className="content-quantity-product"
-      >
-        <TotalProductsCart valor={ quantityProducts } />
-      </div>
-      <div>
-        <input
-          type="email"
-          data-testid="product-detail-email"
-          value={ email }
-          onChange={ (e) => setEmail(e.target.value) }
-        />
-        {Array.from({ length: 5 }, (_, i) => i).map((index) => (
-          <input
-            type="checkbox"
-            key={ index }
-            name="rating"
-            checked={ rating >= (index + 1) }
-            value={ index }
-            data-testid={ `${index + 1}-rating` }
-            onChange={
-              () => { setRating(index + 1); }
-            }
-          />
-        ))}
-        <textarea
-          value={ text }
-          data-testid="product-detail-evaluation"
-          onChange={ (e) => setText(e.target.value) }
-        />
-        <button
-          type="button"
-          data-testid="submit-review-btn"
-          onClick={ onSubmitEvaluation }
-        >
-          Avaliar
-        </button>
-        {error && <p data-testid="error-msg">Campos inválidos</p>}
-      </div>
+      <Header />
+      <Link to="/" className="back-page">
+        <TiArrowBack className="icon-back" />
+        Voltar
+      </Link>
+      <div className="content-cart">
+        <div className="product-content details">
+          <p
+            data-testid="product-detail-name"
+            className="details-p"
+          >
+            { product && product.title }
+          </p>
+          <div className="the-product">
+            <span className="free produtc-free">{ shipping && 'Frete Grátis'}</span>
+            <img
+              alt={ product && product.title }
+              src={ product && product.thumbnail }
+              data-testid="product-detail-image"
+              className="product-image"
+            />
+          </div>
+          <p className="price size-price" data-testid="product-detail-price">
+            <span className="money size-money">R$</span>
+            { product && product.price }
+          </p>
+          <button
+            type="button"
+            data-testid="product-detail-add-to-cart"
+            className="button-add"
+            onClick={ () => {
+              onAddItems();
+              addToCart(product);
+            } }
+          >
+            Adicionar ao carrinho
+          </button>
+        </div>
 
+        <Link
+          data-testid="shopping-cart-button"
+          to="/cart"
+          className="cart-finaly cart-product content-quantity-product"
+        >
+          <RiShoppingCart2Fill />
+          <TotalProductsCart
+            valor={ quantityProducts }
+          />
+        </Link>
+        <span className="content-avaluation">
+          <div className="form-rating">
+            <input
+              type="email"
+              data-testid="product-detail-email"
+              value={ email }
+              onChange={ (e) => setEmail(e.target.value) }
+              className="Email"
+              placeholder="Email"
+            />
+            <div className="container">
+              {[...Array(number5)].map((index, i) => {
+                const ratingValue = i + 1;
+                return (
+                  <label htmlFor={ index } key={ index }>
+                    <input
+                      type="radio"
+                      name="rating"
+                      id={ index }
+                      value={ ratingValue }
+                      data-testid={ `${ratingValue}-rating` }
+                      onClick={
+                        () => { setRating(ratingValue); }
+                      }
+                      className="rating"
+                    />
+                    <RiStarFill
+                      className="star"
+                      size={ 25 }
+                      color={ ratingValue <= rating ? '#ffc107' : '#91829C' }
+                    />
+                  </label>
+                );
+              })}
+            </div>
+            <textarea
+              value={ text }
+              data-testid="product-detail-evaluation"
+              onChange={ (e) => setText(e.target.value) }
+              placeholder="Mensagem (opcional)"
+            />
+            <button
+              type="button"
+              data-testid="submit-review-btn"
+              onClick={ onSubmitEvaluation }
+            >
+              Avaliar
+            </button>
+            {error && <p data-testid="error-msg">Campos inválidos</p>}
+          </div>
+        </span>
+      </div>
       <div>
         {evaluations.map((ev, key) => (
           <div key={ key }>

@@ -28,6 +28,7 @@
   grid-template-columns: 1fr 1fr;
   height: 614px;
   justify-items: center;
+  padding-bottom: 5px;
   padding-top: 70px;
   width: 719px;
 }
@@ -40,6 +41,7 @@
 .button-checkout {
   border-style: none;
   grid-column: 1 / -1;
+  margin-top: 50px;
 }
 
 .checkout-separator {
@@ -52,6 +54,7 @@ input label {
 }
 
 .pay {
+  margin-right: 20px;
   margin-top: 20px;
   order: 1;
 }
@@ -61,6 +64,7 @@ input label {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  margin-bottom: 40px;
   width: 100px;
 }
 
@@ -86,13 +90,29 @@ input label {
 }
 
 .icon-payment {
-  color: rgba(145, 130, 156, 0.746);
+  color: rgb(145, 130, 156);
   font-size: 50px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .pay-form {
-  color: rgb(78, 68, 85);
+  color: rgb(145, 130, 156);
   font-weight: 600;
   margin-bottom: -20px;
+  margin-top: 40px;
+}
+
+.elo {
+  width: 60px;
+}
+
+.card {
+  margin-bottom: -15px;
+}
+
+.error {
+  color: rgba(90, 24, 154, 1);
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }

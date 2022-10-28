@@ -5,16 +5,20 @@ import '../style/Header.css';
 import '../style/ProductList.css';
 import '../style/Checkout.css';
 import { Link, useHistory } from 'react-router-dom';
-import { RiShoppingCart2Fill, RiBarcodeLine } from 'react-icons/ri';
 import { BsX } from 'react-icons/bs';
+import
+{ RiShoppingCart2Fill,
+  RiBarcodeLine,
+  RiMastercardFill,
+  RiVisaLine } from 'react-icons/ri';
 import Header from '../component/Header';
+import elo from '../style/elo.svg';
 import {
   getCartProducts, cleanCart, onRemoveProduct,
 } from '../services/api';
 
 export default function Checkout() {
   const history = useHistory();
-
   const [products, setProducts] = useState(getCartProducts());
 
   const onRemove = (id) => {
@@ -117,12 +121,6 @@ export default function Checkout() {
                 className="cart-finaly"
               >
                 <RiShoppingCart2Fill />
-                <p
-                  data-testid="shopping-cart-product-quantity"
-                  className="quantity-cart finaly"
-                >
-                  { product.quantity }
-                </p>
               </Link>
             </>
           ))}
@@ -174,7 +172,7 @@ export default function Checkout() {
             className="info Adress"
           />
           <label htmlFor="payment" className="label-pay">
-            <p className="pay-form">Boleto</p>
+            <p className="pay-form ticket">Boleto</p>
             <input
               className="pay"
               type="radio"
@@ -182,12 +180,13 @@ export default function Checkout() {
               onChange={ onChecked }
               name="payment"
               value="ticket"
-              data-testid="ticket-payment pay"
+              data-testid="ticket-payment"
             />
             <RiBarcodeLine className="icon-payment" />
           </label>
           <label htmlFor="payment">
-            Cartão de Crédito
+            <p className="pay-form">Cartão de Crédito</p>
+            <RiVisaLine className="icon-payment card" />
             <input
               className="pay"
               type="radio"
@@ -197,6 +196,7 @@ export default function Checkout() {
               value="visa"
               data-testid="visa-payment"
             />
+            <RiMastercardFill className="icon-payment card" />
             <input
               className="pay"
               type="radio"
@@ -206,6 +206,7 @@ export default function Checkout() {
               value="master"
               data-testid="master-payment"
             />
+            <img className="elo card" alt="elo" src={ elo } />
             <input
               className="pay"
               type="radio"
@@ -226,7 +227,7 @@ export default function Checkout() {
             Comprar
           </button>
 
-          {error && <p data-testid="error-msg">Campos inválidos</p>}
+          {error && <p data-testid="error-msg" className="error">Campos inválidos</p>}
         </form>
       </div>
     </>

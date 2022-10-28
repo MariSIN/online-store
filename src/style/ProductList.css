@@ -41,7 +41,7 @@
   overflow: hidden;
   text-align: start;
   text-overflow: ellipsis;
-  white-space: pre-wrap;
+  white-space: pre;
   word-spacing: 1px;
   word-wrap: break-word;
 }
