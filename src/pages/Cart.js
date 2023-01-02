@@ -27,7 +27,7 @@ export default function Cart() {
   if (products.length <= 0) {
     return (
       <>
-        <Link to="/" className="back-page">
+        <Link to="/online-store" className="back-page">
           <TiArrowBack className="icon-back" />
           Voltar
         </Link>
