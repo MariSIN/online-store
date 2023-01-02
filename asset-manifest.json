@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/online-store/static/css/main.56c7f239.css",
-    "main.js": "/online-store/static/js/main.639213be.js",
+    "main.js": "/online-store/static/js/main.e0abfcac.js",
     "static/media/Montserrat-VariableFont_wght.ttf": "/online-store/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
     "static/media/NovaMono-Regular.ttf": "/online-store/static/media/NovaMono-Regular.4f3e514a299d9efd587e.ttf",
     "static/media/elo.svg": "/online-store/static/media/elo.7678f7f3551fbefcf6d96d7f1eae9a72.svg",
     "index.html": "/online-store/index.html",
     "main.56c7f239.css.map": "/online-store/static/css/main.56c7f239.css.map",
-    "main.639213be.js.map": "/online-store/static/js/main.639213be.js.map"
+    "main.e0abfcac.js.map": "/online-store/static/js/main.e0abfcac.js.map"
   },
   "entrypoints": [
     "static/css/main.56c7f239.css",
-    "static/js/main.639213be.js"
+    "static/js/main.e0abfcac.js"
   ]
 }
