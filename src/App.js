@@ -12,7 +12,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Route exact path="/online-store/" component={ Home } />
+      <Route exact path="/online-store" component={ Home } />
       <Route exact path="/cart" component={ Cart } />
       <Route exact path="/checkout" component={ Checkout } />
       <Route path="/product/:id" component={ Product } />
