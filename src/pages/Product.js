@@ -62,7 +62,7 @@ export default function Product() {
   return (
     <>
       <Header />
-      <Link to="/" className="back-page">
+      <Link to="/online-store" className="back-page">
         <TiArrowBack className="icon-back" />
         Voltar
       </Link>
