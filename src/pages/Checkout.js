@@ -65,7 +65,7 @@ export default function Checkout() {
     ].some((i) => i === '')) return setError(true);
 
     cleanCart();
-    history.push('/');
+    history.push('/online-store');
   };
 
   if (products.length <= 0) {
