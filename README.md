@@ -29,19 +29,23 @@
   ### Documentação da API do Mercado Livre
   <details>
    <summary><strong>👨‍💻 Endpoints </strong></summary><br />
-   - Para listar as categorias disponíveis:
+   * Para listar as categorias disponíveis:
     - Endpoint: https://api.mercadolibre.com/sites/MLB/categories
-  - Para buscar por itens por termo:
+  
+  * Para buscar por itens por termo:
     - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
     - Endpoint: https://api.mercadolibre.com/sites/MLB/search?q=$QUERY
-  - Para buscar itens por categoria:
+  
+  * Para buscar itens por categoria:
     - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
     - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID
-  - Para buscar itens de uma categoria por termo (vale ressaltar, que este endpoint não necessariamente precisa receber ambos os parâmetros para funcionar):
+  
+  * Para buscar itens de uma categoria por termo (vale ressaltar, que este endpoint não necessariamente precisa receber ambos os parâmetros para funcionar):
     - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
     - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
     - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID&q=$QUERY
-  - Para buscar detalhes de um item especifico:
+  
+  * Para buscar detalhes de um item especifico:
     - Parâmetro de busca $PRODUCT_ID (este parâmetro deve ser substituído pelo valor do campo de busca)
     - Endpoint: https://api.mercadolibre.com/items/$PRODUCT_ID
     
