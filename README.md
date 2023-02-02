@@ -50,6 +50,6 @@
     - Parâmetro de busca $PRODUCT_ID (este parâmetro deve ser substituído pelo valor do campo de busca)
     - Endpoint: https://api.mercadolibre.com/items/$PRODUCT_ID
     
-    [documentação](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas)
+    [Documentação da API completa](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas)
   </details>
 
