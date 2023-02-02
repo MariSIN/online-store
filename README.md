@@ -31,6 +31,7 @@
    <summary><strong>👨‍💻 Endpoints </strong></summary><br />
   
    * Para listar as categorias disponíveis:
+  
     - Endpoint: https://api.mercadolibre.com/sites/MLB/categories
   
   * Para buscar por itens por termo:
