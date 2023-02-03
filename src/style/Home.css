@@ -51,6 +51,7 @@ body {
   background-color: transparent;
   border: none;
   color: rgba(100, 88, 112, 1);
+  cursor: pointer;
   font-size: 15px;
   word-spacing: 1px;
 }
