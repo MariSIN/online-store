@@ -46,7 +46,7 @@ export default function Cart() {
   return (
     <>
       <Header />
-      <Link to="/" className="back-page">
+      <Link to="/online-store" className="back-page">
         <TiArrowBack className="icon-back" />
         Voltar
       </Link>

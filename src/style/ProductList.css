@@ -50,6 +50,7 @@
   align-items: center;
   background-color: transparent;
   border: none;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   height: 348px;
@@ -70,6 +71,7 @@
   width: 259px;
 }
 
+
 .img-products {
   padding-top: 15px;
   width: 150.7px;
@@ -80,6 +82,7 @@
   border: none;
   border-radius: 5px;
   color: rgb(24, 100, 42);
+  cursor: pointer;
   filter: drop-shadow(2px 3px 3px rgba(193, 172, 210, 0.576));
   font-size: 12px;
   font-weight: 600;

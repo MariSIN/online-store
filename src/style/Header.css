@@ -47,3 +47,8 @@
   text-transform: uppercase;
   top: 48px;
 }
+
+.store {
+  display: flex;
+  text-decoration: none;
+}
