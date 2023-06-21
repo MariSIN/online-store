@@ -10,18 +10,6 @@
   - Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações e;
   - Simular a finalização da compra dos itens selecionados.
 
-<details>
-  <summary><strong>:memo: Habilidades</strong></summary><br />
-
-  Neste projeto você será irá:
-
-  * Entender o que são Métodos Ágeis;
-  * Entender o que é Kanban;
-  * Entender o que é Scrum;
-  * Trabalhar em equipes utilizando Kanban ou Scrum de maneira eficaz;
-  * Praticar todas as habilidades desenvolvidas até agora no módulo de Front-end.
-</details>
-
   ### Documentação da API do Mercado Livre
   <details>
    <summary><strong>👨‍💻 Endpoints </strong></summary><br />
